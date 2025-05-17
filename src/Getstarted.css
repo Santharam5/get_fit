@@ -1,0 +1,24 @@
+.backimage{
+   background-image: url('./Asset/gymback2.jpg');
+   background-size: cover;
+   background-image: no-repeat;
+   height:90vh;
+}
+.h1alignment{
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 30px;
+    color: rgb(255, 163, 4);
+    text-decoration: underline;
+}
+.h1alignment2{
+    text-align: center; 
+    color: gold;
+    text-shadow: 1px 1px #df3e3e;
+     font-family: 'Times New Roman', Times, serif;
+}
+.para-alignment{
+    text-align: justify;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}

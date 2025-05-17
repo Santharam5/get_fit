@@ -1,0 +1,43 @@
+.product-slider{
+background-color: white;
+margin: 0 30px;
+padding: 20px;
+margin-bottom: 15px;
+}
+.product-slider .products{
+display: flex;
+overflow-x: auto;
+overflow-y: hidden;
+gap: 20px;
+
+}
+.product-slider .products img{
+    max-width: 100%;
+    max-height: 100%;
+     object-fit: cover;
+}
+.products::-webkit-scrollbar{
+    display: none;
+}
+
+.text-alginmnet{
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+}
+.card-backcolor{
+    background-color: red;
+}
+.pro-1-h1{
+    padding-top: 10px;
+    color: gold;
+    text-shadow: 1px 1px #df3e3e;
+     font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.pro-2-h2{
+    color: gold;
+     font-family: 'Times New Roman', Times, serif;
+}
+.pro-title{
+    font-family: 'Times New Roman', Times, serif;
+}
