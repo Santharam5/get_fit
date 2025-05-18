@@ -23,7 +23,7 @@
 }
 
 .dropdown-menu .dropdown-item:hover {
-  background-color: white !important;
+  background-color: rgba(245, 245, 245, 0.454) !important;
   color: black !important;
   border-radius: 5px;
 }
