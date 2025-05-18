@@ -1,43 +1,43 @@
-.overall{
-    background-image: url('./Asset/background_gym.jpg');
-    background-size:cover;
-     background-image: no-repeat;
-     background-attachment: fixed;
-   height:70%;
+.overall {
+  background-image: url("./Asset/background_gym.jpg");
+  background-size: cover;
+  background-image: no-repeat;
+  background-attachment: fixed;
+  height: 70%;
 }
-.backcolor{
-    background-color: rgba(255, 255, 255, 0.829);
+.backcolor {
+  background-color: rgba(255, 255, 255, 0.829);
 }
-.h1-alignment{
-text-align: center;
-text-shadow: 1px 1px #df3e3e;
-font-family: 'Times New Roman', Times, serif;
+.h1-alignment {
+  text-align: center;
+  text-shadow: 1px 1px #df3e3e;
+  font-family: "Times New Roman", Times, serif;
 }
-.para-alignment-fitness{
-    text-align: justify;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
+.para-alignment-fitness {
+  text-align: justify;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
 }
-.para-alignment-fitness-second{
-    text-align: justify;
-    font-size: 19px;
-    font-family: 'Times New Roman', Times, serif;
+.para-alignment-fitness-second {
+  text-align: justify;
+  font-size: 19px;
+  font-family: "Times New Roman", Times, serif;
 }
-.overall-2{
-     background-image: url('./Asset/newgymback.jpg');
-    background-size:cover;
-     background-image: no-repeat;
-     background-attachment: scroll;
-   height:100%;
+.overall-2 {
+  background-image: url("./Asset/newgymback.jpg");
+  background-size: cover;
+  background-image: no-repeat;
+  background-attachment: scroll;
+  height: 100%;
 }
-.middle-alginment{
-text-align: center;
-font-family: 'Times New Roman', Times, serif;
+.middle-alginment {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
 }
-.marked{
-    color:yellow;
-    font-family: 'Times New Roman', Times, serif;
+.marked {
+  color: yellow;
+  font-family: "Times New Roman", Times, serif;
 }
-.newcolor{
-    color:white;
+.newcolor {
+  color: white;
 }

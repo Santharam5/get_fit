@@ -1,40 +1,39 @@
-.styleBmi{
-    max-width: 300px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    
+.styleBmi {
+  max-width: 300px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
-.inputBmi{
-    width:100%;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 10px; 
-    font-family: 'Times New Roman', Times, serif;   
+.inputBmi {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-family: "Times New Roman", Times, serif;
 }
-.button{
-    padding: 10px 20px;
-    background-color: #00f7ff;
-    color:#fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer ;
+.button {
+  padding: 10px 20px;
+  background-color: #00f7ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
-.bmi-pic{
-    width: 70vh;
+.bmi-pic {
+  width: 70vh;
 }
-.bmi-h2{
-    padding-top: 10px;
-    color: gold;
-    text-shadow: 1px 1px #df3e3e;
-     font-family: 'Times New Roman', Times, serif;
-    text-align: center;
+.bmi-h2 {
+  padding-top: 10px;
+  color: gold;
+  text-shadow: 1px 1px #df3e3e;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
 }
-.bmi-para{
-    font-family: 'Times New Roman', Times, serif;
-    text-align: justify;
+.bmi-para {
+  font-family: "Times New Roman", Times, serif;
+  text-align: justify;
 }
 .bmi-table {
   width: 80%;
@@ -42,14 +41,15 @@
   margin: 40px auto;
   border-collapse: collapse;
   text-align: center;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background-color: #f9f9f9;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
 }
 
-.bmi-table th, .bmi-table td {
+.bmi-table th,
+.bmi-table td {
   padding: 15px;
   border-bottom: 1px solid #ddd;
 }

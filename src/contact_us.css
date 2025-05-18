@@ -1,30 +1,29 @@
-.backimg-testimonial{
-    background-image: url('./Asset/Testimonials.jpg');
-    background-position: cover;
-    background-repeat: repeat;
-    height: 50vh;
+.backimg-testimonial {
+  background-image: url("./Asset/Testimonials.jpg");
+  background-position: cover;
+  background-repeat: repeat;
+  height: 50vh;
 }
-.testi-color-1{
-    background-color:rgba(215, 130, 238, 0.763);
+.testi-color-1 {
+  background-color: rgba(215, 130, 238, 0.763);
 }
-.testi-color-2{
-    background-color: #0d6dfdb5;
+.testi-color-2 {
+  background-color: #0d6dfdb5;
 }
-.testi-color-3{
-    background-color: #17a1b9c8;
+.testi-color-3 {
+  background-color: #17a1b9c8;
 }
-.testimonial-center{
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    padding-top: 10px;
-    color: gold;
-    text-shadow: 1px 1px #df3e3e;
+.testimonial-center {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  padding-top: 10px;
+  color: gold;
+  text-shadow: 1px 1px #df3e3e;
 }
-.contact-para{
-    font-family: 'Times New Roman', Times, serif;
+.contact-para {
+  font-family: "Times New Roman", Times, serif;
 }
-.button-contact-form{
- text-align: center;
-    margin-top: 20px;
-    
+.button-contact-form {
+  text-align: center;
+  margin-top: 20px;
 }

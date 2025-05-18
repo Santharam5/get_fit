@@ -1,22 +1,21 @@
-.customize-navbar{
-  background-color: #060906; 
+.customize-navbar {
+  background-color: #060906;
 }
-.customize-navbar2{
-  background-color: rgba(255, 217, 0, 0.666); 
-
+.customize-navbar2 {
+  background-color: rgba(255, 217, 0, 0.666);
 }
-.hoverusingclass:hover{
-  border:1px solid;
+.hoverusingclass:hover {
+  border: 1px solid;
   border-radius: 5px;
   background-color: rgba(245, 245, 245, 0.454);
   color: black;
-  }
+}
 
 .nav-link {
-margin-left: 30px;
+  margin-left: 30px;
 }
-.line1{
- color:red;
+.line1 {
+  color: red;
 }
 .dropdown-menu {
   background-color: rgba(255, 217, 0, 0.666) !important;

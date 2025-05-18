@@ -1,21 +1,21 @@
-.main{
-    background-color: black;
+.main {
+  background-color: black;
 }
 .main h5 {
-  color: #FFD700;
+  color: #ffd700;
   margin-bottom: 1rem;
 }
-.main a{
+.main a {
   color: #f0f0f0;
   text-decoration: none;
   display: block;
   margin-bottom: 0.5rem;
-  transition: color 0.3s ease; 
+  transition: color 0.3s ease;
 }
-ul{
-    list-style-type: none;
+ul {
+  list-style-type: none;
 }
 
 .main a:hover {
-  color: #FFD700;
+  color: #ffd700;
 }
