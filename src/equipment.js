@@ -18,7 +18,7 @@ const Equipment = () => {
           <Container>
             <Row>
               <Col data-aos="fade-right">
-                <img src={eq1} className="img-size" />
+                <img src={eq1} className="img-size" alt="" />
               </Col>
               <Col className="new-color" data-aos="fade-left">
                 <h2>Deadlift</h2> <hr></hr>
@@ -56,13 +56,13 @@ const Equipment = () => {
                 </Button>
               </Col>
               <Col data-aos="fade-left">
-                <img src={eq2} width={500} />
+                <img src={eq2} width={500} alt="" />
               </Col>
             </Row>
             <br></br>
             <Row>
               <Col data-aos="fade-right">
-                <img src={eq3} width={500} />
+                <img src={eq3} width={500} alt="" />
               </Col>
               <Col className="new-color eq-h2" data-aos="fade-left">
                 <h2>Barebell</h2> <hr></hr>
@@ -100,7 +100,7 @@ const Equipment = () => {
                 </Button>
               </Col>
               <Col data-aos="fade-left">
-                <img src={eq4} width={500} />
+                <img src={eq4} width={500} alt="" />
               </Col>
             </Row>
           </Container>

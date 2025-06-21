@@ -125,7 +125,7 @@ const Bmicalc = () => {
 
                   {!bmi && status && <p>{status}</p>}
                 </div>
-                <img src={bmipic} className="bmi-pic" />
+                <img src={bmipic} className="bmi-pic" alt="bmi-pic" />
               </Col>
             </Row>
           </Container>

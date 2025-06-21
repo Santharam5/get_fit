@@ -40,7 +40,7 @@ const Fitness = () => {
           <Container>
             <Row className="backcolor">
               <Col data-aos="fade-right">
-                <img src={corprate} alt="corpratepic" width={500} />
+                <img src={corprate} alt="corpratepic" width={500}  />
               </Col>
               <Col data-aos="fade-left">
                 <h3>Corporate Membership</h3>
