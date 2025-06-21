@@ -81,7 +81,7 @@ const Equipment = () => {
                 </Button>
               </Col>
             </Row>
-            <br></br> 
+            <br></br>
             <Row>
               <Col className="new-color eq-h2" data-aos="fade-right">
                 <h2>Skipping</h2> <hr></hr>
