@@ -100,7 +100,7 @@ const Equipment = () => {
                 </Button>
               </Col>
               <Col data-aos="fade-left">
-            
+              <img src={eq4} width={500} alt="" />
               </Col>
             </Row>
           </Container>
