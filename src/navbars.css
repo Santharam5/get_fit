@@ -27,3 +27,29 @@
   color: black !important;
   border-radius: 5px;
 }
+.navbar {
+  flex-direction: column; /* Stack items vertically on mobile */
+  padding: 10px;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: row; /* Horizontal on desktop */
+  }
+}
+.exercise-card {
+  width: 100%; /* Full width on mobile */
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .exercise-card {
+    width: calc(50% - 20px); /* 2 columns on tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .exercise-card {
+    width: calc(33.33% - 20px); /* 3 columns on desktop */
+  }
+}

@@ -37,3 +37,10 @@
     transform: rotate(360deg);
   }
 }
+.exercises-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0 15px; /* Optional: Adds breathing room on sides */
+}
