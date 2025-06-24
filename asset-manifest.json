@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/get_fit/static/css/main.95c1a765.css",
+    "main.js": "/get_fit/static/js/main.80d49fbe.js",
+    "static/js/453.93d3e7a5.chunk.js": "/get_fit/static/js/453.93d3e7a5.chunk.js",
+    "static/media/equip3.jpg": "/get_fit/static/media/equip3.2b230cb90c74797fcb90.jpg",
+    "static/media/protien4.jpg": "/get_fit/static/media/protien4.538bbf15062cfda8f488.jpg",
+    "static/media/equip2.jpg": "/get_fit/static/media/equip2.aff3bc76c29fa80e7c70.jpg",
+    "static/media/protien5.jpg": "/get_fit/static/media/protien5.685a07c82f2ecf43f959.jpg",
+    "static/media/equip1.jpg": "/get_fit/static/media/equip1.f14ee23366d78da21316.jpg",
+    "static/media/bmi.jpg": "/get_fit/static/media/bmi.4118fb35945eb8eb165f.jpg",
+    "static/media/grouptraining.jpg": "/get_fit/static/media/grouptraining.889b773f9a19a6c15f70.jpg",
+    "static/media/training.jpg": "/get_fit/static/media/training.26ef96ccb74366945746.jpg",
+    "static/media/protien1.jpg": "/get_fit/static/media/protien1.179f8c0f32f17c50bc80.jpg",
+    "static/media/protien7.jpg": "/get_fit/static/media/protien7.8912d390a29a7459ea12.jpg",
+    "static/media/equip6.jpg": "/get_fit/static/media/equip6.ad7be7af32232d6b839e.jpg",
+    "static/media/back-img.jpg": "/get_fit/static/media/back-img.79d8bd98803f95261dcd.jpg",
+    "static/media/newgymback.jpg": "/get_fit/static/media/newgymback.bf27350df86b00d90c73.jpg",
+    "static/media/corprate.jpg": "/get_fit/static/media/corprate.ae9e9b75dd092fe559e3.jpg",
+    "static/media/background_gym.jpg": "/get_fit/static/media/background_gym.dc55be22f05a1a8c2681.jpg",
+    "static/media/Testimonials.jpg": "/get_fit/static/media/Testimonials.15df0e0070388804c734.jpg",
+    "static/media/pic3.png": "/get_fit/static/media/pic3.da8ca4a2b9bdd8fe2ed9.png",
+    "static/media/pic2.png": "/get_fit/static/media/pic2.2f1ea9e86abf485f7bad.png",
+    "static/media/pic1.png": "/get_fit/static/media/pic1.e865bafa39278ba818fe.png",
+    "static/media/pic4.png": "/get_fit/static/media/pic4.9b7bd684910bc59073d9.png",
+    "static/media/GETFIT.png": "/get_fit/static/media/GETFIT.a017a2e891375416c571.png",
+    "static/media/gymback2.jpg": "/get_fit/static/media/gymback2.6ba32b0803915fd44350.jpg",
+    "static/media/india.png": "/get_fit/static/media/india.fc4e35bd51e9b12df1af.png",
+    "static/media/exercise.png": "/get_fit/static/media/exercise.3aed65831faa02c0d5e5.png",
+    "static/media/gym.png": "/get_fit/static/media/gym.e3b5d94197a3f309b191.png",
+    "static/media/GGFI-ACE-Certification.jpg": "/get_fit/static/media/GGFI-ACE-Certification.ce8630584304be8a59f2.jpg",
+    "static/media/GGFI-Personal-training.jpg": "/get_fit/static/media/GGFI-Personal-training.c4b59dfef2b05f36880f.jpg",
+    "static/media/GGFI-Online-Personal-Training.jpg": "/get_fit/static/media/GGFI-Online-Personal-Training.1b0b6c40ced31ef8feee.jpg",
+    "index.html": "/get_fit/index.html",
+    "main.95c1a765.css.map": "/get_fit/static/css/main.95c1a765.css.map",
+    "main.80d49fbe.js.map": "/get_fit/static/js/main.80d49fbe.js.map",
+    "453.93d3e7a5.chunk.js.map": "/get_fit/static/js/453.93d3e7a5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.95c1a765.css",
+    "static/js/main.80d49fbe.js"
+  ]
+}
