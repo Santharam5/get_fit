@@ -13,6 +13,7 @@ import Equipment from "./equipment";
 import Bmicalc from "./bmicalc";
 import Footer from "./footer";
 import Contact from "./contact_us";
+import Adminpanel from "./admin_panel";
 const App = () => {
   useEffect(() => {
     AOS.init({ duration: 1500, once: false }); //once is onetime if true else it will false for many times
@@ -20,7 +21,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Navbars />
+        {/*<Navbars />
         <USeCarousel />
         <Getstart />
         <Fitness />
@@ -29,6 +30,8 @@ const App = () => {
         <Bmicalc />
         <Contact />
         <Footer />
+        <admin_panel/>*/}
+        <Adminpanel />
       </BrowserRouter>
     </>
   );
