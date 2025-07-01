@@ -32,6 +32,7 @@ const App = () => {
         <Footer />
         <admin_panel/>*/}
         <Adminpanel />
+        <Contact />
       </BrowserRouter>
     </>
   );
