@@ -10,8 +10,119 @@ import Getfit from "./Asset/GETFIT.png";
 import { HashLink } from "react-router-hash-link";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Table from "react-bootstrap/Table";
 
 const Adminpanel = () => {
+  const [deleteAllUser, setDeleteAllUser] = useState("");
+
+  const HandleDeleteAllUser = () => {
+    fetch("http://localhost:8080/deleteall", { method: "DELETE" })
+      .then((res) => {
+        return res.text();
+      })
+      .then((data) => {
+        console.log("Data");
+        setDeleteAllUser(data);
+        setItems([]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const [deleteId, setDeleteid] = useState("");
+  const [deleteData, setDeleteData] = useState("");
+  const HandleDeleteSingleUser = () => {
+    if (!deleteId) {
+      alert("Please enter id to delete user");
+      return;
+    }
+    fetch(`http://localhost:8080/${deleteId}`, { method: "DELETE" })
+      .then((res) => res.text())
+      .then((data) => {
+        console.log("Data deleted Successfully");
+        setDeleteData(`User with ID ${deleteId} deleted successfully`);
+        setDeleteid("");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const [updateId, setUpdateId] = useState("");
+  const [updateData, setUpdateData] = useState({
+    name: "",
+    email: "",
+    phonenumber: "",
+    query: "",
+  });
+  const handleUpdateChange = (e) => {
+    const { name, value } = e.target;
+    setUpdateData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+  const handleUpdateUSer = () => {
+    if (!updateId) {
+      alert("please enter a User id");
+      return;
+    }
+    fetch(`http://localhost:8080/${updateId}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updateData),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log("user Updated:", data);
+        alert("User updated Successfully");
+        setUpdateId("");
+        setUpdateData({
+          name: "",
+          email: "",
+          phonenumber: "",
+          query: "",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const [searchId, setSearchId] = useState("");
+  const [singleUser, setSingleUser] = useState(null);
+  const HandleViewSingle = () => {
+    if (!searchId) {
+      alert("please enter id");
+      return;
+    }
+    fetch(`http://localhost:8080/getalluser/${searchId}`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setSingleUser(data);
+      })
+      .catch((error) => {
+        console.log(error);
+        setSingleUser(null);
+      });
+  };
+
+  const [items, setItems] = useState([]);
+
+  const HandleView = () => {
+    fetch("http://localhost:8080/getalluser")
+      .then((res) => res.json())
+      .then((data) => setItems(data))
+      .catch((error) => {
+        console.log(error);
+        alert("Failed to fetch data");
+      });
+  };
   const [formData, setFormData] = useState({
     name: "",
     phonenumber: "",
@@ -151,7 +262,7 @@ const Adminpanel = () => {
       <hr className="line1" />
 
       <div style={{ padding: "20px" }}>
-        <h1>Create Query</h1>
+        <h2>Create Query</h2>
         <Form onSubmit={handlesubmit}>
           <Form.Group className="mb-3" controlId="formName">
             <Form.Control
@@ -201,6 +312,152 @@ const Adminpanel = () => {
             Submit
           </Button>
         </Form>
+      </div>
+      <hr></hr>
+      <h2>View</h2>
+
+      <ul>
+        {items.length === 0 && <li>Press To Fetch data</li>}
+
+        <Table striped bordered hover responsive>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+              <th>Query</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.length === 0 ? (
+              <tr>
+                <td colSpan="5" className="text-center">
+                  No data is currently available Click fetch
+                </td>
+              </tr>
+            ) : (
+              items.map((user) => (
+                <tr key={user.id}>
+                  <td>{user.id}</td>
+                  <td>{user.name}</td>
+                  <td>{user.phonenumber}</td>
+                  <td>{user.email}</td>
+                  <td>{user.query}</td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </Table>
+
+        <center>
+          <button onClick={HandleView}>fetch Data</button>
+        </center>
+      </ul>
+      <hr></hr>
+      <h2>View User by ID</h2>
+      <div style={{ marginBottom: "20px" }}>
+        <label htmlFor="getuserid">Enter ID To Find User : </label>
+        <input
+          type="text"
+          name="getuserid"
+          value={searchId}
+          onChange={(e) => setSearchId(e.target.value)}
+        />{" "}
+      </div>
+
+      <center>
+        {singleUser && (
+          <Table striped bordered hover responsive>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Query</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{singleUser.id}</td>
+                <td>{singleUser.name}</td>
+                <td>{singleUser.phonenumber}</td>
+                <td>{singleUser.email}</td>
+                <td>{singleUser.query}</td>
+              </tr>
+            </tbody>
+          </Table>
+        )}
+        <button onClick={HandleViewSingle}>Fetch single user</button>
+      </center>
+      <hr></hr>
+      <h2>Update User by id</h2>
+      <div style={{ marginBottom: "20px" }}>
+        <label htmlFor="updateuser">Enter Id to Update the User deatils</label>
+        <input
+          name="updateuser"
+          type="text"
+          value={updateId}
+          onChange={(e) => setUpdateId(e.target.value)}
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter new name"
+          value={updateData.name}
+          onChange={handleUpdateChange}
+        />{" "}
+      </div>
+      <div>
+        <input
+          type="text"
+          name="email"
+          placeholder="Enter new Email"
+          value={updateData.email}
+          onChange={handleUpdateChange}
+        />{" "}
+      </div>
+      <div>
+        <input
+          type="text"
+          name="phonenumber"
+          placeholder="Enter new Phonenumber"
+          value={updateData.phonenumber}
+          onChange={handleUpdateChange}
+        />{" "}
+      </div>
+      <div>
+        <input
+          type="text"
+          name="query"
+          placeholder="Enter new Query"
+          value={updateData.query}
+          onChange={handleUpdateChange}
+        />{" "}
+      </div>
+      <button onClick={handleUpdateUSer}>Update User</button>
+      <hr></hr>
+      <div>
+        <label htmlFor="deletesingleuser">Enter Id To Delete single user</label>
+        <input
+          name="deletesingleuser"
+          type="text"
+          value={deleteId}
+          onChange={(e) => setDeleteid(e.target.value)}
+        />
+        <button onClick={HandleDeleteSingleUser}>
+          Press Button to Delete Single User
+        </button>
+        {deleteData && <p>deleteData</p>}
+      </div>
+      <hr></hr>
+      <div>
+        {" "}
+        <button onClick={HandleDeleteAllUser}>Delete All Users</button>
+        {deleteAllUser && <p>{deleteAllUser}</p>}
       </div>
     </>
   );

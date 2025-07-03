@@ -15,7 +15,7 @@ const UserLogin = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ name: username, password }),
       });
 
       const data = await response.json();
@@ -58,7 +58,9 @@ const UserLogin = () => {
         </div>
         <button type="submit" style={styles.button}>
           Login
-        </button><br></br><br></br>
+        </button>
+        <br></br>
+        <br></br>
         <button
           type="button"
           onClick={() => navigate("/adminlogin")}
@@ -67,7 +69,6 @@ const UserLogin = () => {
           Admin Login
         </button>
       </form>
-     
     </div>
   );
 };
