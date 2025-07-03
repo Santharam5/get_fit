@@ -1,3 +1,3 @@
 # get_fit
 Intership project
-LIVE : https://getfitwebsitefrontendonly.netlify.app/
+LIVE : https://santharam5.github.io/get_fit/
