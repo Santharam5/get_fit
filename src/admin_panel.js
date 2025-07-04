@@ -6,6 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./navbars.css";
+import "./admin_panel.css";
 import Getfit from "./Asset/GETFIT.png";
 import { HashLink } from "react-router-hash-link";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -218,7 +219,15 @@ const Adminpanel = () => {
               <Nav.Link
                 as={HashLink}
                 smooth
-                to="#view"
+                to="#create"
+                className="hoverusingclass fs-6"
+              >
+                Create
+              </Nav.Link>
+              <Nav.Link
+                as={HashLink}
+                smooth
+                to="#View"
                 className="hoverusingclass fs-6"
               >
                 View
@@ -226,18 +235,10 @@ const Adminpanel = () => {
               <Nav.Link
                 as={HashLink}
                 smooth
-                to="#edit"
+                to="#update"
                 className="hoverusingclass fs-6"
               >
-                Edit
-              </Nav.Link>
-              <Nav.Link
-                as={HashLink}
-                smooth
-                to="#create"
-                className="hoverusingclass fs-6"
-              >
-                Create
+                Update
               </Nav.Link>
               <Nav.Link
                 as={HashLink}
@@ -258,11 +259,11 @@ const Adminpanel = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
+<div className="backcolor">
       <hr className="line1" />
 
       <div style={{ padding: "20px" }}>
-        <h2>Create Query</h2>
+        <h2 id="create" className="centeralignment">Create Data</h2>
         <Form onSubmit={handlesubmit}>
           <Form.Group className="mb-3" controlId="formName">
             <Form.Control
@@ -308,13 +309,14 @@ const Adminpanel = () => {
               required
             />
           </Form.Group>
+          <center>
           <Button variant="success" type="submit">
             Submit
-          </Button>
+          </Button></center>
         </Form>
       </div>
       <hr></hr>
-      <h2>View</h2>
+      <h2 id="View"  className="centeralignment">View</h2>
 
       <ul>
         {items.length === 0 && <li>Press To Fetch data</li>}
@@ -351,13 +353,13 @@ const Adminpanel = () => {
         </Table>
 
         <center>
-          <button onClick={HandleView}>fetch Data</button>
+          <Button variant="success" onClick={HandleView}>fetch Data</Button>
         </center>
       </ul>
       <hr></hr>
-      <h2>View User by ID</h2>
-      <div style={{ marginBottom: "20px" }}>
-        <label htmlFor="getuserid">Enter ID To Find User : </label>
+      <h2  className="centeralignment">View User by ID</h2>
+      <div  className="centeralignment" style={{ marginBottom: "20px" }}>
+        <label htmlFor="getuserid" className="me-2" >Enter ID To Find User : </label> 
         <input
           type="text"
           name="getuserid"
@@ -389,21 +391,22 @@ const Adminpanel = () => {
             </tbody>
           </Table>
         )}
-        <button onClick={HandleViewSingle}>Fetch single user</button>
+        <Button variant="success" onClick={HandleViewSingle}>Fetch single user</Button>
       </center>
       <hr></hr>
-      <h2>Update User by id</h2>
-      <div style={{ marginBottom: "20px" }}>
-        <label htmlFor="updateuser">Enter Id to Update the User deatils</label>
-        <input
+      <h2 id="update"  className="centeralignment">Update User by id</h2>
+      <div  className="centeralignment" style={{ marginBottom: "20px" }}>
+        <label htmlFor="updateuser" className="me-2 ">Enter Id to Update the User deatils</label>
+       
+        <input 
           name="updateuser"
           type="text"
           value={updateId}
           onChange={(e) => setUpdateId(e.target.value)}
         />
       </div>
-      <div>
-        <input
+      <div  className="centeralignment">
+        <input className="mb-3"
           type="text"
           name="name"
           placeholder="Enter new name"
@@ -411,7 +414,7 @@ const Adminpanel = () => {
           onChange={handleUpdateChange}
         />{" "}
       </div>
-      <div>
+      <div  className="centeralignment mb-3">
         <input
           type="text"
           name="email"
@@ -420,7 +423,7 @@ const Adminpanel = () => {
           onChange={handleUpdateChange}
         />{" "}
       </div>
-      <div>
+      <div  className="centeralignment mb-3">
         <input
           type="text"
           name="phonenumber"
@@ -429,7 +432,7 @@ const Adminpanel = () => {
           onChange={handleUpdateChange}
         />{" "}
       </div>
-      <div>
+      <div  className="centeralignment mb-3">
         <input
           type="text"
           name="query"
@@ -437,27 +440,30 @@ const Adminpanel = () => {
           value={updateData.query}
           onChange={handleUpdateChange}
         />{" "}
-      </div>
-      <button onClick={handleUpdateUSer}>Update User</button>
+      </div><center>
+      <Button variant="success" onClick={handleUpdateUSer}>Update User</Button></center>
       <hr></hr>
-      <div>
-        <label htmlFor="deletesingleuser">Enter Id To Delete single user</label>
+      <div className="centeralignment paddingaling" >
+        <h2 id="delete"  >Delete User by id</h2>
+        <label htmlFor="deletesingleuser" className="me-2">Enter Id To Delete single user</label>
         <input
           name="deletesingleuser"
           type="text"
           value={deleteId}
           onChange={(e) => setDeleteid(e.target.value)}
-        />
-        <button onClick={HandleDeleteSingleUser}>
+        /></div> <center>
+        <Button  onClick={HandleDeleteSingleUser} variant="danger">
           Press Button to Delete Single User
-        </button>
+        </Button></center>
         {deleteData && <p>deleteData</p>}
-      </div>
+      
       <hr></hr>
-      <div>
+       <h2 id="delete"  className="centeralignment">Delete User by id</h2>
+      <div className="centeralignment"> 
         {" "}
-        <button onClick={HandleDeleteAllUser}>Delete All Users</button>
+        <Button variant="danger" onClick={HandleDeleteAllUser}>Delete All Users</Button>
         {deleteAllUser && <p>{deleteAllUser}</p>}
+      </div>
       </div>
     </>
   );

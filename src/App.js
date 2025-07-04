@@ -18,6 +18,7 @@ import Userlogin from "./userlogin";
 import HomePage from "./HomePage";
 import { MainLayout } from "./MainLayout";
 import AdminLogin from "./adminlogin";
+import Signuplogin from "./signuplogin";
 import { Navigate } from "react-router-dom";
 
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/get_fit" element={<Userlogin />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
          <Route path="/Adminpanel" element={<Adminpanel />} />
+         <Route path="/Signuplogin" element={<Signuplogin />} />
 
 
           <Route element={<MainLayout />}>

@@ -1,0 +1,9 @@
+.backimage {
+  background-image: url("./Asset/corprate.jpg");
+  background-size: cover;
+  background-image: no-repeat;
+  height: 100vh;
+}
+.color-white {
+  color: white;
+}

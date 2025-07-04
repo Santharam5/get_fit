@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import "./userlogin.css";
 const UserLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -33,42 +33,52 @@ const UserLogin = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <form onSubmit={handleSubmit} style={styles.form}>
-        <h2 style={styles.heading}>User Login</h2>
-        <div style={styles.inputGroup}>
-          <label style={styles.label}>Username</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            style={styles.input}
-            required
-          />
-        </div>
-        <div style={styles.inputGroup}>
-          <label style={styles.label}>Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            style={styles.input}
-            required
-          />
-        </div>
-        <button type="submit" style={styles.button}>
-          Login
-        </button>
-        <br></br>
-        <br></br>
-        <button
-          type="button"
-          onClick={() => navigate("/adminlogin")}
-          style={{ ...styles.button, background: "green", marginTop: "10px" }}
-        >
-          Admin Login
-        </button>
-      </form>
+    <div className="backimage">
+      <div style={styles.container}>
+        <form onSubmit={handleSubmit} style={styles.form}>
+          <h2 style={styles.heading}>GETFIT User Login</h2>
+          <div style={styles.inputGroup}>
+            <label style={styles.label}>Username</label>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              style={styles.input}
+              required
+            />
+          </div>
+          <div style={styles.inputGroup} >
+            <label style={styles.label}>Password</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={styles.input}
+              required
+            />
+          </div>
+          <button type="submit"  className="mb-3" style={styles.button}>
+            Login
+          </button>
+         
+          <button className="mb-3"
+            type="button"
+            onClick={() => navigate("/adminlogin")}
+            style={{
+              ...styles.button,
+              background: "#fd7e14",
+              marginTop: "10px",
+            }}
+          >
+            Admin Login
+          </button>
+         
+          <p>
+            No <b>Account</b> Yet Create New Account &#8594;{" "}
+            <a href="/signuplogin">Sign Up</a>{" "}
+          </p>
+        </form>
+      </div>
     </div>
   );
 };
@@ -79,12 +89,11 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     height: "80vh",
-    background: "#f8f9fa",
   },
   form: {
     padding: "30px",
     borderRadius: "8px",
-    background: "white",
+    background: "	#f0f8ff",
     boxShadow: "0 0 10px rgba(0,0,0,0.1)",
     width: "300px",
   },
@@ -109,7 +118,7 @@ const styles = {
   button: {
     width: "100%",
     padding: "10px",
-    background: "#007bff",
+    background: "blue",
     color: "white",
     border: "none",
     borderRadius: "4px",
