@@ -24,7 +24,7 @@ const SignupLogin = () => {
     e.preventDefault();
     setError(""); // Clear previous errors
 
-    fetch("http://localhost:8080/api/signup", {
+    fetch("https://getfit-backend-vso9.onrender.com/api/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
