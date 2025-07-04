@@ -17,7 +17,9 @@ const Adminpanel = () => {
   const [deleteAllUser, setDeleteAllUser] = useState("");
 
   const HandleDeleteAllUser = () => {
-    fetch("https://getfit-backend-vso9.onrender.com/deleteall", { method: "DELETE" })
+    fetch("https://getfit-backend-vso9.onrender.com/deleteall", {
+      method: "DELETE",
+    })
       .then((res) => {
         return res.text();
       })
@@ -38,7 +40,9 @@ const Adminpanel = () => {
       alert("Please enter id to delete user");
       return;
     }
-    fetch(`https://getfit-backend-vso9.onrender.com/${deleteId}`, { method: "DELETE" })
+    fetch(`https://getfit-backend-vso9.onrender.com/${deleteId}`, {
+      method: "DELETE",
+    })
       .then((res) => res.text())
       .then((data) => {
         console.log("Data deleted Successfully");
@@ -100,7 +104,7 @@ const Adminpanel = () => {
       alert("please enter id");
       return;
     }
-    fetch(`https://getfit-backend-vso9.onrender.com/${searchId}`)
+    fetch(`https://getfit-backend-vso9.onrender.com/getalluser/${searchId}`)
       .then((res) => {
         return res.json();
       })
@@ -248,128 +252,78 @@ const Adminpanel = () => {
               >
                 Delete
               </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="/"
-                className="hoverusingclass fs-6"
-              >
+              <Nav.Link as={Link} to="/" className="hoverusingclass fs-6">
                 Logout
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-<div className="backcolor">
-      <hr className="line1" />
+      <div className="backcolor">
+        <hr className="line1" />
+        <div style={{ padding: "20px" }}>
+          <h2 id="create" className="centeralignment">
+            Create Data
+          </h2>
+          <Form onSubmit={handlesubmit}>
+            <Form.Group className="mb-3" controlId="formName">
+              <Form.Control
+                type="text"
+                name="name"
+                placeholder="Enter a Name"
+                maxLength={40}
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formPhone">
+              <Form.Control
+                type="tel"
+                name="phonenumber"
+                pattern="\d{10}"
+                maxLength={10}
+                placeholder="Enter a Phone number"
+                value={formData.phonenumber}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formEmail">
+              <Form.Control
+                type="email"
+                name="email"
+                placeholder="Enter an Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formQuery">
+              <Form.Control
+                as="textarea"
+                rows={3}
+                name="query"
+                value={formData.query}
+                placeholder="Enter your Queries"
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <center>
+              <Button variant="success" type="submit">
+                Submit
+              </Button>
+            </center>
+          </Form>
+        </div>
+        <hr></hr>
+        <h2 id="View" className="centeralignment">
+          View
+        </h2>
+        <ul>
+          {items.length === 0 && <li>Press To Fetch data</li>}
 
-      <div style={{ padding: "20px" }}>
-        <h2 id="create" className="centeralignment">Create Data</h2>
-        <Form onSubmit={handlesubmit}>
-          <Form.Group className="mb-3" controlId="formName">
-            <Form.Control
-              type="text"
-              name="name"
-              placeholder="Enter a Name"
-              maxLength={40}
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formPhone">
-            <Form.Control
-              type="tel"
-              name="phonenumber"
-              pattern="\d{10}"
-              maxLength={10}
-              placeholder="Enter a Phone number"
-              value={formData.phonenumber}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formEmail">
-            <Form.Control
-              type="email"
-              name="email"
-              placeholder="Enter an Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formQuery">
-            <Form.Control
-              as="textarea"
-              rows={3}
-              name="query"
-              value={formData.query}
-              placeholder="Enter your Queries"
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-          <center>
-          <Button variant="success" type="submit">
-            Submit
-          </Button></center>
-        </Form>
-      </div>
-      <hr></hr>
-      <h2 id="View"  className="centeralignment">View</h2>
-
-      <ul>
-        {items.length === 0 && <li>Press To Fetch data</li>}
-
-        <Table striped bordered hover responsive>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Phone Number</th>
-              <th>Email</th>
-              <th>Query</th>
-            </tr>
-          </thead>
-          <tbody>
-            {items.length === 0 ? (
-              <tr>
-                <td colSpan="5" className="text-center">
-                  No data is currently available Click fetch
-                </td>
-              </tr>
-            ) : (
-              items.map((user) => (
-                <tr key={user.id}>
-                  <td>{user.id}</td>
-                  <td>{user.name}</td>
-                  <td>{user.phonenumber}</td>
-                  <td>{user.email}</td>
-                  <td>{user.query}</td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </Table>
-
-        <center>
-          <Button variant="success" onClick={HandleView}>fetch Data</Button>
-        </center>
-      </ul>
-      <hr></hr>
-      <h2  className="centeralignment">View User by ID</h2>
-      <div  className="centeralignment" style={{ marginBottom: "20px" }}>
-        <label htmlFor="getuserid" className="me-2" >Enter ID To Find User : </label> 
-        <input
-          type="text"
-          name="getuserid"
-          value={searchId}
-          onChange={(e) => setSearchId(e.target.value)}
-        />{" "}
-      </div>
-
-      <center>
-        {singleUser && (
           <Table striped bordered hover responsive>
             <thead>
               <tr>
@@ -381,89 +335,160 @@ const Adminpanel = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>{singleUser.id}</td>
-                <td>{singleUser.name}</td>
-                <td>{singleUser.phonenumber}</td>
-                <td>{singleUser.email}</td>
-                <td>{singleUser.query}</td>
-              </tr>
+              {items.length === 0 ? (
+                <tr>
+                  <td colSpan="5" className="text-center">
+                    No data is currently available Click fetch
+                  </td>
+                </tr>
+              ) : (
+                items.map((user) => (
+                  <tr key={user.id}>
+                    <td>{user.id}</td>
+                    <td>{user.name}</td>
+                    <td>{user.phonenumber}</td>
+                    <td>{user.email}</td>
+                    <td>{user.query}</td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </Table>
-        )}
-        <Button variant="success" onClick={HandleViewSingle}>Fetch single user</Button>
-      </center>
-      <hr></hr>
-      <h2 id="update"  className="centeralignment">Update User by id</h2>
-      <div  className="centeralignment" style={{ marginBottom: "20px" }}>
-        <label htmlFor="updateuser" className="me-2 ">Enter Id to Update the User deatils</label>
-       
-        <input 
-          name="updateuser"
-          type="text"
-          value={updateId}
-          onChange={(e) => setUpdateId(e.target.value)}
-        />
-      </div>
-      <div  className="centeralignment">
-        <input className="mb-3"
-          type="text"
-          name="name"
-          placeholder="Enter new name"
-          value={updateData.name}
-          onChange={handleUpdateChange}
-        />{" "}
-      </div>
-      <div  className="centeralignment mb-3">
-        <input
-          type="text"
-          name="email"
-          placeholder="Enter new Email"
-          value={updateData.email}
-          onChange={handleUpdateChange}
-        />{" "}
-      </div>
-      <div  className="centeralignment mb-3">
-        <input
-          type="text"
-          name="phonenumber"
-          placeholder="Enter new Phonenumber"
-          value={updateData.phonenumber}
-          onChange={handleUpdateChange}
-        />{" "}
-      </div>
-      <div  className="centeralignment mb-3">
-        <input
-          type="text"
-          name="query"
-          placeholder="Enter new Query"
-          value={updateData.query}
-          onChange={handleUpdateChange}
-        />{" "}
-      </div><center>
-      <Button variant="success" onClick={handleUpdateUSer}>Update User</Button></center>
-      <hr></hr>
-      <div className="centeralignment paddingaling" >
-        <h2 id="delete"  >Delete User by id</h2>
-        <label htmlFor="deletesingleuser" className="me-2">Enter Id To Delete single user</label>
-        <input
-          name="deletesingleuser"
-          type="text"
-          value={deleteId}
-          onChange={(e) => setDeleteid(e.target.value)}
-        /></div> <center>
-        <Button  onClick={HandleDeleteSingleUser} variant="danger">
-          Press Button to Delete Single User
-        </Button></center>
+
+          <center>
+            <Button variant="success" onClick={HandleView}>
+              fetch Data
+            </Button>
+          </center>
+        </ul>
+        <hr></hr>
+        <h2 className="centeralignment">View User by ID</h2>
+        <div className="centeralignment" style={{ marginBottom: "20px" }}>
+          <label htmlFor="getuserid" className="me-2">
+            Enter ID To Find User :{" "}
+          </label>
+          <input
+            type="text"
+            name="getuserid"
+            value={searchId}
+            onChange={(e) => setSearchId(e.target.value)}
+          />{" "}
+        </div>
+        <center>
+          {singleUser && (
+            <Table striped bordered hover responsive>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Phone Number</th>
+                  <th>Email</th>
+                  <th>Query</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{singleUser.id}</td>
+                  <td>{singleUser.name}</td>
+                  <td>{singleUser.phonenumber}</td>
+                  <td>{singleUser.email}</td>
+                  <td>{singleUser.query}</td>
+                </tr>
+              </tbody>
+            </Table>
+          )}
+          <Button variant="success" onClick={HandleViewSingle}>
+            Fetch single user
+          </Button>
+        </center>
+        <hr></hr>
+        <h2 id="update" className="centeralignment">
+          Update User by id
+        </h2>
+        <div className="centeralignment" style={{ marginBottom: "20px" }}>
+          <label htmlFor="updateuser" className="me-2 ">
+            Enter Id to Update the User deatils
+          </label>
+
+          <input
+            name="updateuser"
+            type="text"
+            value={updateId}
+            onChange={(e) => setUpdateId(e.target.value)}
+          />
+        </div>
+        <div className="centeralignment">
+          <input
+            className="mb-3"
+            type="text"
+            name="name"
+            placeholder="Enter new name"
+            value={updateData.name}
+            onChange={handleUpdateChange}
+          />{" "}
+        </div>
+        <div className="centeralignment mb-3">
+          <input
+            type="text"
+            name="email"
+            placeholder="Enter new Email"
+            value={updateData.email}
+            onChange={handleUpdateChange}
+          />{" "}
+        </div>
+        <div className="centeralignment mb-3">
+          <input
+            type="text"
+            name="phonenumber"
+            placeholder="Enter new Phonenumber"
+            value={updateData.phonenumber}
+            onChange={handleUpdateChange}
+          />{" "}
+        </div>
+        <div className="centeralignment mb-3">
+          <input
+            type="text"
+            name="query"
+            placeholder="Enter new Query"
+            value={updateData.query}
+            onChange={handleUpdateChange}
+          />{" "}
+        </div>
+        <center>
+          <Button variant="success" onClick={handleUpdateUSer}>
+            Update User
+          </Button>
+        </center>
+        <hr></hr>
+        <div className="centeralignment paddingaling">
+          <h2 id="delete">Delete User by id</h2>
+          <label htmlFor="deletesingleuser" className="me-2">
+            Enter Id To Delete single user
+          </label>
+          <input
+            name="deletesingleuser"
+            type="text"
+            value={deleteId}
+            onChange={(e) => setDeleteid(e.target.value)}
+          />
+        </div>{" "}
+        <center>
+          <Button onClick={HandleDeleteSingleUser} variant="danger">
+            Press Button to Delete Single User
+          </Button>
+        </center>
         {deleteData && <p>deleteData</p>}
-      
-      <hr></hr>
-       <h2 id="delete"  className="centeralignment">Delete User by id</h2>
-      <div className="centeralignment"> 
-        {" "}
-        <Button variant="danger" onClick={HandleDeleteAllUser}>Delete All Users</Button>
-        {deleteAllUser && <p>{deleteAllUser}</p>}
-      </div>
+        <hr></hr>
+        <h2 id="delete" className="centeralignment">
+          Delete User by id
+        </h2>
+        <div className="centeralignment">
+          {" "}
+          <Button variant="danger" onClick={HandleDeleteAllUser}>
+            Delete All Users
+          </Button>
+          {deleteAllUser && <p>{deleteAllUser}</p>}
+        </div>
       </div>
     </>
   );
