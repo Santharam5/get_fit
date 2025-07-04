@@ -22,7 +22,7 @@ const UserLogin = () => {
 
       if (data.status === "success") {
         alert("Login successful!");
-        navigate("/get_fit_home"); // redirect to home page
+        navigate("/get_fit"); // redirect to home page
       } else {
         alert(data.message || "Invalid username or password");
       }

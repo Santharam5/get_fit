@@ -128,7 +128,7 @@ const Navbars = () => {
               </Nav.Link>
               <Nav.Link
                 as={Link}
-                to="/get_fit"
+                to="/"
                 className="hoverusingclass fs-6"
               >
                 Logout

@@ -23,7 +23,7 @@ const SignupLogin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setError(""); // Clear previous errors
-    
+
     fetch("http://localhost:8080/api/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -32,22 +32,22 @@ const SignupLogin = () => {
       .then(async (response) => {
         const contentType = response.headers.get("content-type");
         if (contentType && contentType.includes("application/json")) {
-          return response.json().then(data => ({
+          return response.json().then((data) => ({
             ok: response.ok,
-            data
+            data,
           }));
         } else {
           const text = await response.text();
           return {
             ok: response.ok,
-            data: { message: text }
+            data: { message: text },
           };
         }
       })
       .then(({ ok, data }) => {
         if (ok) {
           alert("Signup successful!");
-          navigate("/adminlogin");
+          navigate("/");
         } else {
           setError(data.message || "Signup failed");
         }
@@ -58,13 +58,13 @@ const SignupLogin = () => {
       });
   };
 
-  return (  
+  return (
     <div className="signup-container">
       <form onSubmit={handleSubmit} className="signup-form">
         <h2>Create Account</h2>
-        
+
         {error && <div className="error-message">{error}</div>}
-        
+
         <div className="form-group">
           <input
             type="text"
@@ -75,7 +75,7 @@ const SignupLogin = () => {
             required
           />
         </div>
-        
+
         <div className="form-group">
           <input
             type="email"
@@ -86,7 +86,7 @@ const SignupLogin = () => {
             required
           />
         </div>
-        
+
         <div className="form-group">
           <input
             type="tel"
@@ -97,7 +97,7 @@ const SignupLogin = () => {
             required
           />
         </div>
-        
+
         <div className="form-group">
           <input
             type="password"
@@ -108,18 +108,19 @@ const SignupLogin = () => {
             required
           />
         </div>
-        
+
         <Button type="submit" className="submit-btn mb-3">
           Register
         </Button>
-        
-  <Button variant="danger"
-  type="button"
-  onClick={() => navigate("/get_fit")}
-  className="submit-btn"
->
-  Back to User Login
-</Button>
+
+        <Button
+          variant="danger"
+          type="button"
+          onClick={() => navigate("/")}
+          className="submit-btn"
+        >
+          Back to User Login
+        </Button>
       </form>
     </div>
   );
