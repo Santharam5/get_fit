@@ -1,0 +1,6 @@
+.backimage {
+  background-image: url("./Asset/gymback2.jpg");
+  background-size: cover;
+  background-image: no-repeat;
+  height: 100vh;
+}

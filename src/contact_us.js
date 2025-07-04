@@ -7,13 +7,13 @@ import Button from "react-bootstrap/Button";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
-    phone: "",
+    phonenumber: "",
     email: "",
-    msg: "",
+    query: "",
   });
   const handleChange = useCallback((e) => {
     const { name, value } = e.target;
-    if (name === "phone" && !/^\d*$/.test(value)) {
+    if (name === "phonenumber" && !/^\d*$/.test(value)) {
       return;
     }
     setFormData((prev) => ({
@@ -24,11 +24,25 @@ const Contact = () => {
   const handlesubmit = useCallback(
     (e) => {
       e.preventDefault();
-      if (formData.phone.length !== 10) {
+      if (formData.phonenumber.length !== 10) {
         return;
       }
-      console.log(formData);
-      setFormData({ name: "", phone: "", email: "", msg: "" });
+      fetch("http://localhost:8080/createquery", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+        .then((resolved) => {
+          return resolved.json();
+        })
+        .then((response) => {
+          console.log(response);
+
+          setFormData({ name: "", phonenumber: "", email: "", query: "" });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
     [formData]
   );
@@ -115,11 +129,11 @@ const Contact = () => {
               <Form.Group className="mb-3" controlId="exampleForm.ControlPhone">
                 <Form.Control
                   type="tel"
-                  name="phone"
+                  name="phonenumber"
                   pattern="\d{10}"
                   maxLength={10}
                   placeholder="Enter a Phone number"
-                  value={formData.phone}
+                  value={formData.phonenumber}
                   onChange={handleChange}
                   required
                 />
@@ -141,8 +155,8 @@ const Contact = () => {
                 <Form.Control
                   as="textarea"
                   rows={3}
-                  name="msg"
-                  value={formData.msg}
+                  name="query"
+                  value={formData.query}
                   placeholder="Enter your Queries"
                   onChange={handleChange}
                   required

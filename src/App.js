@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbars from "./navbar";
 import USeCarousel from "./carousel";
 import Getstart from "./Getstartsec";
@@ -13,6 +13,14 @@ import Equipment from "./equipment";
 import Bmicalc from "./bmicalc";
 import Footer from "./footer";
 import Contact from "./contact_us";
+import Adminpanel from "./admin_panel";
+import Userlogin from "./userlogin";
+import HomePage from "./HomePage";
+import { MainLayout } from "./MainLayout";
+import AdminLogin from "./adminlogin";
+import Signuplogin from "./signuplogin";
+import { Navigate } from "react-router-dom";
+
 const App = () => {
   useEffect(() => {
     AOS.init({ duration: 1500, once: false }); //once is onetime if true else it will false for many times
@@ -20,7 +28,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Navbars />
+        {/*<Navbars />
         <USeCarousel />
         <Getstart />
         <Fitness />
@@ -29,6 +37,19 @@ const App = () => {
         <Bmicalc />
         <Contact />
         <Footer />
+        <admin_panel/>*/}
+        <Routes>
+          
+          <Route path="/get_fit" element={<Userlogin />} />
+          <Route path="/adminlogin" element={<AdminLogin />} />
+         <Route path="/Adminpanel" element={<Adminpanel />} />
+         <Route path="/Signuplogin" element={<Signuplogin />} />
+
+
+          <Route element={<MainLayout />}>
+            <Route path="/get_fit_home" element={<HomePage />} />
+          </Route>
+        </Routes>
       </BrowserRouter>
     </>
   );

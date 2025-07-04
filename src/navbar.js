@@ -7,6 +7,8 @@ import "./navbars.css";
 import Getfit from "./Asset/GETFIT.png";
 import { HashLink } from "react-router-hash-link";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 const Navbars = () => {
   return (
     <>
@@ -123,6 +125,13 @@ const Navbars = () => {
                 className="hoverusingclass fs-6"
               >
                 Contact Us
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/get_fit"
+                className="hoverusingclass fs-6"
+              >
+                Logout
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
