@@ -74,7 +74,7 @@ const AdminLogin = () => {
           <button
             style={styles.button2}
             type="button"
-            onClick={() => navigate("/get_fit")}
+            onClick={() => navigate("/")}
           >
             Cancel
           </button>
