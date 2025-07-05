@@ -106,7 +106,7 @@ A fitness tracking web application where users can sign up, log in, Find Their B
 
 ## 💾 Database
 
-- **MySQL** hosted on Render/Railway.
+- **MySQL** hosted on Railway.
 - Import `schema.sql` to create necessary tables.
 - Update `.env` in the backend with your database credentials.
 - Example tables:
