@@ -9,7 +9,7 @@ A fitness tracking web application where users can sign up, log in, Find Their B
 - **Frontend:** [View Here](https://get-fit-git-main-santharam-bs-projects.vercel.app/)
 - **Backend API:** [API Endpoint](https://getfit-backend-vso9.onrender.com)
 
-⚠️ **Note:** Backend is hosted on Render free plan and may sleep after inactivity. Please wait for a few seconds when first loading.
+⚠️ **Note:** Backend is hosted on Render free plan and may sleep after inactivity. Please wait for a one or two minutes when first loading.
 
 ---
 
