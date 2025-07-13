@@ -22,6 +22,7 @@ const UserLogin = () => {
 
       if (data.status === "success") {
         alert("Login successful!");
+        localStorage.setItem("isAuth", true);
         navigate("/get_fit"); // redirect to home page
       } else {
         alert(data.message || "Invalid username or password");
@@ -57,10 +58,10 @@ const UserLogin = () => {
               required
             />
           </div>
-          <button type="submit"  className="mb-3" style={styles.button}>
+          <button type="submit" className="mb-3" style={styles.button}>
             Login
           </button>
-         
+
           <button className="mb-3"
             type="button"
             onClick={() => navigate("/adminlogin")}
@@ -72,7 +73,7 @@ const UserLogin = () => {
           >
             Admin Login
           </button>
-         
+
           <p>
             No <b>Account</b> Yet Create New Account &#8594;{" "}
             <a href="/signuplogin">Sign Up</a>{" "}
