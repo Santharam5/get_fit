@@ -27,6 +27,7 @@ const AdminLogin = () => {
       if (data.status === "success") {
         alert("Admin login successful!");
         navigate("/Adminpanel"); // redirect to admin panel/dashboard
+        localStorage.setItem("isAuth", true);
       } else {
         alert(data.message || "Invalid admin credentials");
       }

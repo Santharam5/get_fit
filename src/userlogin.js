@@ -10,18 +10,23 @@ const UserLogin = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://getfit-backend-vso9.onrender.com/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name: username, password }),
-      });
+      const response = await fetch(
+        "https://getfit-backend-vso9.onrender.com/api/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name: username, password }),
+        }
+      );
 
       const data = await response.json();
+      console.log(data);
 
       if (data.status === "success") {
         alert("Login successful!");
+        localStorage.setItem("isAuth", JSON.stringify(true));
         navigate("/get_fit"); // redirect to home page
       } else {
         alert(data.message || "Invalid username or password");
@@ -47,7 +52,7 @@ const UserLogin = () => {
               required
             />
           </div>
-          <div style={styles.inputGroup} >
+          <div style={styles.inputGroup}>
             <label style={styles.label}>Password</label>
             <input
               type="password"
@@ -57,11 +62,12 @@ const UserLogin = () => {
               required
             />
           </div>
-          <button type="submit"  className="mb-3" style={styles.button}>
+          <button type="submit" className="mb-3" style={styles.button}>
             Login
           </button>
-         
-          <button className="mb-3"
+
+          <button
+            className="mb-3"
             type="button"
             onClick={() => navigate("/adminlogin")}
             style={{
@@ -72,7 +78,7 @@ const UserLogin = () => {
           >
             Admin Login
           </button>
-         
+
           <p>
             No <b>Account</b> Yet Create New Account &#8594;{" "}
             <a href="/signuplogin">Sign Up</a>{" "}

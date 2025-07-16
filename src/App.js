@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { Children, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import "./navbars.css";
 import AOS from "aos";
@@ -21,17 +21,37 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Userlogin />} />
+          <Route path="/login" element={<Userlogin />} />
+          <Route path="/" element={<Navigate to={"/login"} />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
-          <Route path="/Adminpanel" element={<Adminpanel />} />
           <Route path="/Signuplogin" element={<Signuplogin />} />
 
-          <Route element={<MainLayout />}>
-            <Route path="/get_fit" element={<HomePage />} />
+          <Route
+            path="/Adminpanel"
+            element={
+              <PrivateRoute>
+                <Adminpanel />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            element={
+              <PrivateRoute>
+                <MainLayout />
+              </PrivateRoute>
+            }
+          >
+            <Route path="/get_fit" element={<PrivateRoute><HomePage /></PrivateRoute>} />
           </Route>
         </Routes>
       </BrowserRouter>
     </>
   );
+};
+
+const PrivateRoute = ({ children }) => {
+  const isAuthUser = JSON.parse(localStorage.getItem("isAuth")) === true;
+  return isAuthUser ? children : <Navigate to="/login" />;
 };
 export default App;
