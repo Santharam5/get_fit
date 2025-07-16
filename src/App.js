@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Children, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import "./navbars.css";
@@ -22,21 +22,26 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Userlogin />} />
+          <Route path="/" element={<Navigate to={"/login"} />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
           <Route path="/Signuplogin" element={<Signuplogin />} />
 
+          <Route
+            path="/Adminpanel"
+            element={
+              <PrivateRoute>
+                <Adminpanel />
+              </PrivateRoute>
+            }
+          />
 
-          <Route path="/Adminpanel" element={
-            <PrivateRoute>
-              <Adminpanel />
-            </PrivateRoute>
-          } />
-
-          <Route element={
-            <PrivateRoute>
-              <MainLayout />
-            </PrivateRoute>
-          }>
+          <Route
+            element={
+              <PrivateRoute>
+                <MainLayout />
+              </PrivateRoute>
+            }
+          >
             <Route path="/get_fit" element={<HomePage />} />
           </Route>
         </Routes>
@@ -45,8 +50,8 @@ const App = () => {
   );
 };
 
-const PrivateRoute = ({ child }) => {
-  const isAuthUser = JSON.parse(localStorage.getItem("user"));
-  return isAuthUser ? child : <Navigate to="/login" />
-}
+const PrivateRoute = ({ children }) => {
+  const isAuthUser = JSON.parse(localStorage.getItem("isAuth"));
+  return isAuthUser ? children : <Navigate to="/login" />;
+};
 export default App;

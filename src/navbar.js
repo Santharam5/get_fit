@@ -130,6 +130,7 @@ const Navbars = () => {
                 as={Link}
                 to="/"
                 className="hoverusingclass fs-6"
+                onClick={() => localStorage.removeItem("isAuth")}
               >
                 Logout
               </Nav.Link>

@@ -252,7 +252,12 @@ const Adminpanel = () => {
               >
                 Delete
               </Nav.Link>
-              <Nav.Link as={Link} to="/" className="hoverusingclass fs-6">
+              <Nav.Link
+                as={Link}
+                to="/"
+                className="hoverusingclass fs-6"
+                onClick={() => localStorage.removeItem("isAuth")}
+              >
                 Logout
               </Nav.Link>
             </Nav>

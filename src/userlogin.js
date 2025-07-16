@@ -10,15 +10,19 @@ const UserLogin = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://getfit-backend-vso9.onrender.com/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name: username, password }),
-      });
+      const response = await fetch(
+        "https://getfit-backend-vso9.onrender.com/api/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name: username, password }),
+        }
+      );
 
       const data = await response.json();
+      console.log(data);
 
       if (data.status === "success") {
         alert("Login successful!");
@@ -48,7 +52,7 @@ const UserLogin = () => {
               required
             />
           </div>
-          <div style={styles.inputGroup} >
+          <div style={styles.inputGroup}>
             <label style={styles.label}>Password</label>
             <input
               type="password"
@@ -62,7 +66,8 @@ const UserLogin = () => {
             Login
           </button>
 
-          <button className="mb-3"
+          <button
+            className="mb-3"
             type="button"
             onClick={() => navigate("/adminlogin")}
             style={{
