@@ -42,7 +42,7 @@ const App = () => {
               </PrivateRoute>
             }
           >
-            <Route path="/get_fit" element={<HomePage />} />
+            <Route path="/get_fit" element={<PrivateRoute><HomePage /></PrivateRoute>} />
           </Route>
         </Routes>
       </BrowserRouter>
@@ -51,7 +51,7 @@ const App = () => {
 };
 
 const PrivateRoute = ({ children }) => {
-  const isAuthUser = JSON.parse(localStorage.getItem("isAuth"));
+  const isAuthUser = JSON.parse(localStorage.getItem("isAuth")) === true;
   return isAuthUser ? children : <Navigate to="/login" />;
 };
 export default App;

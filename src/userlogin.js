@@ -26,7 +26,7 @@ const UserLogin = () => {
 
       if (data.status === "success") {
         alert("Login successful!");
-        localStorage.setItem("isAuth", true);
+        localStorage.setItem("isAuth", JSON.stringify(true));
         navigate("/get_fit"); // redirect to home page
       } else {
         alert(data.message || "Invalid username or password");
