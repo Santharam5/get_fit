@@ -12,7 +12,7 @@ const AdminLogin = () => {
 
     try {
       const response = await fetch(
-        "https://getfit-backend-vso9.onrender.com/api/admin/adminlogin",
+        "https://getfit-backend-rl37.onrender.com/api/admin/adminlogin",
         {
           method: "POST",
           headers: {

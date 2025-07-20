@@ -11,7 +11,7 @@ const UserLogin = () => {
 
     try {
       const response = await fetch(
-        "https://getfit-backend-vso9.onrender.com/api/login",
+        "https://getfit-backend-rl37.onrender.com/api/login",
         {
           method: "POST",
           headers: {

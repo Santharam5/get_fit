@@ -17,7 +17,7 @@ const Adminpanel = () => {
   const [deleteAllUser, setDeleteAllUser] = useState("");
 
   const HandleDeleteAllUser = () => {
-    fetch("https://getfit-backend-vso9.onrender.com/deleteall", {
+    fetch("https://getfit-backend-rl37.onrender.com/deleteall", {
       method: "DELETE",
     })
       .then((res) => {
@@ -40,7 +40,7 @@ const Adminpanel = () => {
       alert("Please enter id to delete user");
       return;
     }
-    fetch(`https://getfit-backend-vso9.onrender.com/${deleteId}`, {
+    fetch(`https://getfit-backend-rl37.onrender.com/${deleteId}`, {
       method: "DELETE",
     })
       .then((res) => res.text())
@@ -73,7 +73,7 @@ const Adminpanel = () => {
       alert("please enter a User id");
       return;
     }
-    fetch(`https://getfit-backend-vso9.onrender.com/${updateId}`, {
+    fetch(`https://getfit-backend-rl37.onrender.com/${updateId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updateData),
@@ -104,7 +104,7 @@ const Adminpanel = () => {
       alert("please enter id");
       return;
     }
-    fetch(`https://getfit-backend-vso9.onrender.com/getalluser/${searchId}`)
+    fetch(`https://getfit-backend-rl37.onrender.com/getalluser/${searchId}`)
       .then((res) => {
         return res.json();
       })
@@ -120,7 +120,7 @@ const Adminpanel = () => {
   const [items, setItems] = useState([]);
 
   const HandleView = () => {
-    fetch("https://getfit-backend-vso9.onrender.com/getalluser")
+    fetch("https://getfit-backend-rl37.onrender.com/getalluser")
       .then((res) => res.json())
       .then((data) => setItems(data))
       .catch((error) => {
@@ -153,7 +153,7 @@ const Adminpanel = () => {
         alert("Phone number must be 10 digits");
         return;
       }
-      fetch("https://getfit-backend-vso9.onrender.com/createquery", {
+      fetch("https://getfit-backend-rl37.onrender.com/createquery", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

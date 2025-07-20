@@ -27,7 +27,7 @@ const Contact = () => {
       if (formData.phonenumber.length !== 10) {
         return;
       }
-      fetch("https://getfit-backend-vso9.onrender.com/createquery", {
+      fetch("https://getfit-backend-rl37.onrender.com/createquery", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
