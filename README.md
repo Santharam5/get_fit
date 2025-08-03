@@ -17,7 +17,7 @@ A fitness tracking web application where users can sign up, log in, Find Their B
 
 - **Frontend:** React, CSS, Bootstrap
 - **Backend:** Java , Spring boot
-- **Database:** MySQL (Cloud hosted on Railway)
+- **Database:** MySQL (Cloud hosted on freesqldatabase)
 - **Hosting:** Render (backend), Vercel (frontend)
 
 ---
@@ -115,7 +115,10 @@ A fitness tracking web application where users can sign up, log in, Find Their B
   - `goals` for fitness goals
 
 ---
-
+## for Admin credentials
+- admin name : test1
+- admin password : test1
+---
 ## 🚀 Future Improvements
 
 - Email verification on signup
@@ -136,5 +139,5 @@ This project is licensed under the [MIT License](LICENSE).
 - **Email:** santharam141@gmail.com
 
 ---
-
+-(beside any improvements or issuse in this project ping me .)
 ## Have A Nice Day 😊❣️
