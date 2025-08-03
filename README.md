@@ -116,8 +116,9 @@ A fitness tracking web application where users can sign up, log in, Find Their B
 
 ---
 ## for Admin credentials
-- admin name : test1
-- admin password : test1
+- admin name : newadmin
+- admin password : newadmin123
+
 ---
 ## 🚀 Future Improvements
 
