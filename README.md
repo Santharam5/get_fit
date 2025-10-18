@@ -6,10 +6,7 @@ A fitness tracking web application where users can sign up, log in, Find Their B
 
 ## 🔗 Live Demo
 
-- **Frontend:** [View Here](https://get-fit-git-main-santharam-bs-projects.vercel.app/)
-- **Backend API:** [API Endpoint](https://getfit-backend-rl37.onrender.com)
-
-⚠️ **Note:** Backend is hosted on Render free plan and may sleep after inactivity. Please wait for a one or two minutes when first loading.
+⚠️ **Note:** Live hosting is ended.
 
 ---
 
@@ -18,7 +15,7 @@ A fitness tracking web application where users can sign up, log in, Find Their B
 - **Frontend:** React, CSS, Bootstrap
 - **Backend:** Java , Spring boot
 - **Database:** MySQL (Cloud hosted on freesqldatabase)
-- **Hosting:** Render (backend), Vercel (frontend)
+- **Hosting:** Render (backend), Vercel (frontend) (Its Ended)
 
 ---
 
