@@ -137,5 +137,5 @@ This project is licensed under the [MIT License](LICENSE).
 - **Email:** santharam141@gmail.com
 
 ---
--(beside any improvements or issuse in this project ping me .)
+-(beside any improvements or issue in this project ping me .)
 ## Have A Nice Day 😊❣️
